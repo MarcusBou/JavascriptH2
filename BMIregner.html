@@ -1,0 +1,61 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <p>Indsæt højde i CM : <input id="height" type="text"></p>
+    <p>Indsæt vægt i Kg : <input id="weight" type="text"></p>
+    <input type="button" onclick="calculateBMI()" value="Beregn din BMI">
+    <h1 id="outBMI"></h1>
+    <h3 id="whatTypeOfBMI"></h6>
+</body>
+<script>
+function calculateBMI(){
+    var height, weight;
+    height = document.getElementById("height").value;
+    weight = document.getElementById("weight").value;
+    
+    if(isNaN(height)|| height == ""){
+        alert("Height, can not be empty or letters")
+    } else if(isNaN(weight)|| weight == ""){
+        alert("Weight, can not be empty or letters")
+    }
+    else{
+        document.getElementById("outBMI").innerHTML = calBMI(weight, height);
+        document.getElementById("whatTypeOfBMI").innerHTML = bmiWeighCat(calBMI(weight, height));
+    }
+}
+
+function calBMI(w,h){
+    h = h/100;
+    var bmi = (w/(h*h));
+    return bmi.toFixed(2);
+}
+
+function bmiWeighCat(bmi){
+    if(16.00 < bmi && bmi < 18.5){
+        document.body.style.backgroundColor = "#00c3ff";
+        return "Body Weight Deficit";
+    } else if(18.5 < bmi && bmi < 24.00){
+        document.body.style.backgroundColor = "#2c993e";
+        return "Norm";
+    } else if(24.00 < bmi && bmi < 30.00){
+        document.body.style.backgroundColor = "#00ff40";
+        return "Weight over";
+    } else if(30.00 < bmi && bmi < 35.00){
+        document.body.style.backgroundColor = "#f1f518";
+        return "Obesity First Degree";
+    } else if(35.00 < bmi && bmi < 40.00){
+        document.body.style.backgroundColor = "#ffbb00";
+        return "Obesity Second Degree";
+    } else if(40.00 < bmi){
+        document.body.style.backgroundColor = "#ff1100";
+        return "Obesity Third Degree";
+    }
+}
+
+</script>
+</html>

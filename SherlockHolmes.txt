@@ -1,0 +1,26 @@
+Goddag Watson
+
+Grunden Til Koden her ikke vil virke er
+[-------------------------------------------------------------------]
+var balance =10500;
+var cameraOn = true;
+function steal(balance, amount){
+    cameraOn = false;
+    if(amount < balance){
+        balance = balance - amount;
+    }
+    return amount;
+    cameraOn= true;
+}
+var amount = steal(balance, 1250);
+alert("Du er kriminel og du har lige stjålet " +amount +" og det må man ikke!!!!");
+[-------------------------------------------------------------------]
+
+Grund nr.1 Under functionen steal vil den ikke tage fat i balancen, og da kan den ikke trække "Pengene fra balance".
+Grund nr.2 Den vil ikke tænde for kameraene igen efter at "Pengene", skulle være stjålet.
+Grund nr.3 Den vil UANSET, hvad returnere det indsatte amout også selvom balancen ikke har beløbet.
+Grund nr.4 er mere bare en alert fejl da, alerten sidder uden for funktionen vil den altid blive vist.
+
+<p>Indsæt højde i CM : <input id="height" type="text"></p>
+    <p>Indsæt vægt i Kg : <input id="weight" type="text"></p>
+    <input type="button" onclick="calculateBMI()">
