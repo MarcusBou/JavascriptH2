@@ -1,0 +1,41 @@
+.login{
+    
+    width: 25%;
+    margin: auto;
+    overflow: auto;
+}
+
+
+.chatThread{
+    max-height: 700px;
+    width: 50%;
+    margin: auto;
+    border: 1px solid;
+    overflow: auto;
+}
+.inputbox{
+    height: 100px;
+    width: 50%;
+    margin: auto;
+    border: 1px solid;
+    }
+.name{
+    font-weight: bold;
+}
+
+.message{
+    overflow-wrap: break-word;
+}
+
+.time{
+    color: lightslategray;
+}
+#inputTextField{
+    height: 100%;
+    width: 75%;
+}
+#Send{
+    height: 100%;
+    width: 23%;
+}
+
